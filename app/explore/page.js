@@ -25,7 +25,7 @@ const Explore = () => {
             return <CoinCard key={coin.id} coin={coin} />;
           })}
         </div>
-        <div className="mt-8 mx-2 flex justify-between">
+        <div className="my-4 mx-2 flex justify-between">
           <button
             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
             disabled={page === 1}

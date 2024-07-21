@@ -1,6 +1,8 @@
 "use client";
 
+import GlobalMarketChart from "@/components/GlobalMarketChart";
 import Header from "@/components/Header";
+import PublicCompanyHoldings from "@/components/PublicCompanyHoldings";
 
 export default function Home() {
   return (
@@ -10,8 +12,8 @@ export default function Home() {
         <h1 className="text-center text-2xl font-bold my-4">
           Cryptonite - CryptoCurrency Tracker
         </h1>
-        {/* Market Chart */}
-        {/* Public Holdings */}
+        <GlobalMarketChart />
+        <PublicCompanyHoldings />
       </main>
     </div>
   );

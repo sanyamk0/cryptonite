@@ -79,7 +79,7 @@ const CoinPage = () => {
   return (
     <div className="min-w-fit">
       <Header />
-      <main>
+      <main className="p-1">
         <div className="my-4 flex flex-col">
           <img
             src={coinData.image.large}
@@ -93,7 +93,7 @@ const CoinPage = () => {
             ${coinData.market_data.current_price.usd.toFixed(2)}
           </span>
         </div>
-        <div className="my-3 w-full overflow-auto">
+        <div className="my-3 overflow-auto">
           <Line data={chartData} options={chartOptions} />
         </div>
         <div className="flex flex-col">
