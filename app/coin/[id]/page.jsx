@@ -86,7 +86,7 @@ const CoinPage = () => {
             alt={coinData.name}
             className="w-14 h-14 mb-2"
           />
-          <Link href={`${coinData.links.homepage[0 || 1 || 2 || 3 || 4]}`}>
+          <Link href={`${coinData.links.homepage[0]}`}>
             <span className="text-sm font-light">{coinData.name}</span>
           </Link>
           <span className="text-xl font-semibold">
@@ -96,33 +96,37 @@ const CoinPage = () => {
         <div className="my-3 overflow-auto">
           <Line data={chartData} options={chartOptions} />
         </div>
-        <div className="flex flex-col">
-          <p className="text-2xl font-semibold my-3">Fundamentals</p>
-          {coinData.market_data.market_cap && (
-            <p className="text-base font-light">
-              Market Cap: ${millify(coinData.market_data.market_cap.usd)}
-            </p>
-          )}
-          {coinData.market_data.total_supply && (
-            <p className="text-base font-light">
-              Total Supply: {coinData.market_data.total_supply}
-            </p>
-          )}
-          {coinData.market_data.max_supply && (
-            <p className="text-base font-light">
-              Max Supply: {coinData.market_data.max_supply}
-            </p>
-          )}
-          {coinData.market_data.circulating_supply && (
-            <p className="text-base font-light">
-              Circulating Supply: {coinData.market_data.circulating_supply}
-            </p>
-          )}
-        </div>
-        <div className="flex flex-col">
-          <p className="text-2xl font-semibold my-3">About {coinData.name}</p>
-          <p className="text-base">{coinData.description.en}</p>
-        </div>
+        {coinData.market_data && (
+          <div className="flex flex-col">
+            <p className="text-2xl font-semibold my-3">Fundamentals</p>
+            {coinData.market_data.market_cap && (
+              <p className="text-base font-light">
+                Market Cap: ${millify(coinData.market_data.market_cap.usd)}
+              </p>
+            )}
+            {coinData.market_data.total_supply && (
+              <p className="text-base font-light">
+                Total Supply: {coinData.market_data.total_supply}
+              </p>
+            )}
+            {coinData.market_data.max_supply && (
+              <p className="text-base font-light">
+                Max Supply: {coinData.market_data.max_supply}
+              </p>
+            )}
+            {coinData.market_data.circulating_supply && (
+              <p className="text-base font-light">
+                Circulating Supply: {coinData.market_data.circulating_supply}
+              </p>
+            )}
+          </div>
+        )}
+        {coinData.description && (
+          <div className="flex flex-col">
+            <p className="text-2xl font-semibold my-3">About {coinData.name}</p>
+            <p className="text-base">{coinData.description.en}</p>
+          </div>
+        )}
       </main>
     </div>
   );
