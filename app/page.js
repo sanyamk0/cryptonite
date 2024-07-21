@@ -6,7 +6,7 @@ import PublicCompanyHoldings from "@/components/PublicCompanyHoldings";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-w-fit">
       <Header />
       <main>
         <h1 className="text-center text-2xl font-bold my-4">
